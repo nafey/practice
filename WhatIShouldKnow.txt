@@ -1,0 +1,87 @@
+		
+			Multithreading
+				+ Thread Class and Runnable Basics
+				+ Thread Lifecycle
+				+ .sleep(), .wait(), .notify(), 
+				+ Re entrant lock, by heart
+				+ Thread pool
+				
+			Servlet
+
+	+		Two Explainable things I did in my job
+			
+			How http requests work from start to finish
+
+			How Https/certificates work
+
+			Implementing Asynchronous Systems
+
+			Dynamic Programming
+				- Knapsack Problem
+				- Coin Change Problem
+				- Longest Common Subsequence
+
+
+			
+	+		Binary Search
+	+		Heap Sort
+	+		Merge Sort
+			
+			Line Segment Intersection
+			Rectangle Intersection 
+			
+	x		Inheritance 
+	x		Polymorphism
+	x		Encapsulation
+			
+	x		LinkedList
+				+ Implement an algorithm to find the nth to last element of a singly linked list.
+				- Given a circular linked list, implement an algorithm which returns node at the beginning of the loop.
+				
+	+		Stacks
+				+ Towers of Hanoi
+				+ Queue with two stacks
+				+ Next Greater element
+				
+	+		Queues
+				+ Stack with queues
+			
+	+		Tree
+				+ Given a sorted (increasing order) array, write an algorithm to create a binary tree with minimal height.
+				+ Given a binary search tree, design an algorithm which creates a linked list of all the nodes at each depth 
+				+ Design an algorithm and write code to find the first common ancestor of two nodes in a binary tree.
+				+ Tree Traversals
+				
+	+		Binary Search Tree
+				+ Check if a binary tree is BST or not
+				+ Lowest Common Ancestor in a Binary Search Tree.
+				+ Inorder Successor in Binary Search Tree
+				+ Hibbard Deletion
+				
+	+		Heap
+				+ Delete Max in Heap
+				+ Heap Sort
+				
+	+		HashMap
+				+ Hashing
+				+ Separate Chaining and Open Addressing
+
+	+		What are priority queues?
+
+	+		What is insertion, selection and quicksort?
+				
+			
+			.length() for string
+			.length for array
+			.size() for lists
+	
+	+		Check if two strings are anagram
+	+		Reversing a String
+	+		Reversing a number
+	+		Reversing a Stack, Queue and LL
+	+		Check Palindrome number, String, Stack, Queue
+	+		String Builder API
+
+
+	+ 		What is a binary tree? What is a complete binary tree? What is a balanced binary tree?
+
