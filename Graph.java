@@ -30,25 +30,26 @@ public class Graph {
 	public int E() {
 		int c = 0;
 		
-		for (List list : bags) {
-			c += list.size();
+		for (Bag<Integer> bag : bags) {
+			c += bag.size();
 		}
 		
 		return c;
 	}
 		
+	public boolean connected(int a1, int a2) {
+		Bag<Integer> bag = bags.get(a1);
 		
+		for (Integer a: bag) {
+			if (a2 == a) return true;
+		}
+		
+		return false;
+	}
 	
 	public static void main(String[] args) {
-		Graph graph = new Graph(7);
-		graph.addEdge(0, 1);
-		graph.addEdge(0, 2);
-		graph.addEdge(0, 5);
-		graph.addEdge(0, 6);
-		graph.addEdge(3, 4);
-		graph.addEdge(3, 5);
-		graph.addEdge(4, 5);
-		graph.addEdge(4, 6);
+		Graph g = Support.getGraph();
+		System.out.println(g.connected(5, 0));
 		
 		System.out.println("Hello Graph!");
 	}

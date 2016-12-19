@@ -2,6 +2,8 @@ import java.util.Iterator;
 
 public class Bag<T> implements Iterable<T> {
 	
+	private int count = 0;
+	
 	// an iterator, doesn't implement remove() since it's optional
     private class ListIterator<I> implements Iterator<I> {
         private Node<I> current;
@@ -27,10 +29,15 @@ public class Bag<T> implements Iterable<T> {
 		Node<T> n = new Node<T>(val);
 		n.next = top;
 		top = n;
+		this.count ++;
 	}
 	
 	public Iterator<T> iterator() {
 		return new ListIterator<T>(top);
+	}
+	
+	public int size() {
+		return this.count;
 	}
 	
 
