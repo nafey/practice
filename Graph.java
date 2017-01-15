@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Graph {
 	
-	private List<Bag<Integer>> bags;
+	protected List<Bag<Integer>> bags;
 	
 	public Graph(int v) {
 		bags = new ArrayList<Bag<Integer>>();
@@ -14,7 +14,7 @@ public class Graph {
 		
 	}
 	
-	public void addEdge(Integer v, Integer w) {
+	protected void addEdge(Integer v, Integer w) {
 		this.bags.get(v).add(w);
 		this.bags.get(w).add(v);
 	}
