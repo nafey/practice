@@ -1,0 +1,17 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="2">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="424" startPos="0" endPos="0" selMode="0" lang="Normal Text" encoding="-1" filename="C:\Users\Dell\Desktop\.affirm" backupFilePath="" originalFileLastModifTimestamp="1484936134" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="2306" startPos="957" endPos="957" selMode="0" lang="Normal Text" encoding="-1" filename="E:\_cf\cf_details.txt" backupFilePath="" originalFileLastModifTimestamp="1484586085" />
+            <File firstVisibleLine="14" xOffset="0" scrollWidth="392" startPos="1441" endPos="1441" selMode="0" lang="Java" encoding="-1" filename="E:\_dev\java\practice\Support.java" backupFilePath="" originalFileLastModifTimestamp="1484770005" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="408" startPos="669" endPos="669" selMode="0" lang="Java" encoding="-1" filename="E:\_dev\java\practice\Stack.java" backupFilePath="" originalFileLastModifTimestamp="1484939087" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="480" startPos="448" endPos="448" selMode="0" lang="Java" encoding="-1" filename="E:\_dev\java\practice\Queue.java" backupFilePath="" originalFileLastModifTimestamp="1481834032" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="416" startPos="557" endPos="192" selMode="0" lang="Java" encoding="-1" filename="E:\_dev\java\practice\DFS.java" backupFilePath="" originalFileLastModifTimestamp="1484066315" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="496" startPos="79" endPos="798" selMode="0" lang="Java" encoding="-1" filename="E:\_dev\java\practice\BFS.java" backupFilePath="" originalFileLastModifTimestamp="1484503935" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="512" startPos="347" endPos="323" selMode="0" lang="Java" encoding="-1" filename="E:\_dev\java\practice\Graph.java" backupFilePath="" originalFileLastModifTimestamp="1484468284" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="424" startPos="348" endPos="2" selMode="0" lang="Java" encoding="-1" filename="E:\_dev\java\practice\Digraph.java" backupFilePath="" originalFileLastModifTimestamp="1484468491" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="496" startPos="1025" endPos="1025" selMode="0" lang="Java" encoding="-1" filename="E:\_dev\java\practice\Topology.java" backupFilePath="" originalFileLastModifTimestamp="1484940573" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>

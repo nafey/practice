@@ -1,4 +1,7 @@
-public class Stack<T> {
+import java.lang.Iterable;
+import java.util.Iterator;
+
+public class Stack<T> implements Iterable<T> {
 	public Node<T> head;
 	
 	public boolean isEmpty() {
@@ -18,6 +21,22 @@ public class Stack<T> {
 		this.head = this.head.next;
 		
 		return ret;
+	}
+	
+	public Iterator<T> iterator() {
+		final Node<T> ll = head;
+		return new Iterator<T>() {
+			Node<T> l = ll;
+			public boolean hasNext() {
+				return (l != null);
+			}
+			
+			public T next() {
+				T ret = l.val;
+				l = l.next;
+				return ret;
+			}
+		};
 	}
 		
 	
