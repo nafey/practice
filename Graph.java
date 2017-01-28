@@ -11,7 +11,6 @@ public class Graph {
 		for (int i = 0; i < v; i++) {
 			bags.add(new Bag<Integer>());
 		}
-		
 	}
 	
 	protected void addEdge(Integer v, Integer w) {

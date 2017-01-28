@@ -1,4 +1,3 @@
-
 public class Digraph extends Graph {
 	
 	public Digraph(int i) {

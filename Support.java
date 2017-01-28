@@ -67,7 +67,32 @@ public class Support {
 		
 		return graph;
 	}
+	
+	public static EWG getEWG() {
+		EWG e = new EWG(8);
 		
+		e.addEdge(new Edge(4, 5, 0.35));
+		e.addEdge(new Edge(4, 7, 0.37));
+		e.addEdge(new Edge(5, 7, 0.28));
+		e.addEdge(new Edge(0, 7, 0.16));
+		
+		e.addEdge(new Edge(1, 5, 0.32));
+		e.addEdge(new Edge(0, 4, 0.38));
+		e.addEdge(new Edge(2, 3, 0.17));
+		e.addEdge(new Edge(1, 7, 0.19));
+		
+		e.addEdge(new Edge(0, 2, 0.26));
+		e.addEdge(new Edge(1, 2, 0.36));
+		e.addEdge(new Edge(1, 3, 0.29));
+		e.addEdge(new Edge(2, 7, 0.34));
+		
+		e.addEdge(new Edge(6, 2, 0.40));
+		e.addEdge(new Edge(3, 6, 0.52));
+		e.addEdge(new Edge(6, 0, 0.58));
+		e.addEdge(new Edge(6, 4, 0.93));
+		
+		return e;
+	}
 	
 	public static void main(String[] args) {
 		System.out.println("Hello Support!");
