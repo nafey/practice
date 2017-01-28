@@ -21,8 +21,8 @@ public class Support {
 		return graph;
 	}
 	
-	public static Graph getDigraph() {
-		Graph graph = new Digraph(13);
+	public static Digraph getDigraph() {
+		Digraph graph = new Digraph(13);
 		
 		graph.addEdge(0, 1);
 		graph.addEdge(0, 5);

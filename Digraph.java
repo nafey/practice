@@ -8,11 +8,23 @@ public class Digraph extends Graph {
 	protected void addEdge(Integer v, Integer w) {
 		this.bags.get(v).add(w);
 	}
+	
+	public Digraph getReverse() {
+		Digraph graph = new Digraph(this.V());
+		
+		for (int i = 0; i < this.V(); i++) {
+			for (Integer j : this.adj(i)) {
+				graph.addEdge(j, i);
+			}
+		}
+		
+		return graph;
+	}
 		
 		
 	public static void main(String[] args) {
-		Graph g = Support.getDigraph();
-		System.out.println(g.connected(5, 0));
+		Digraph g = Support.getDigraph().getReverse();
+		Topology t = new Topology(g);
 		
 		System.out.println("Hello Digraph!");
 	}

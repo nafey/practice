@@ -11,7 +11,8 @@ public class Topology {
 				dfs(g, i, visited);
 			}			
 		}
-		System.out.println(source);
+		
+		ret.push(source);
 	}
 	
 	public Topology(Digraph G) {	
