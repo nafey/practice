@@ -18,6 +18,14 @@ public class Support {
 		System.out.print("\n");	
 	}
 	
+	public static void printList(Object[] u, int till) {
+		for (int i = 0; i < till; i++) {
+			System.out.print(u[i] + " ");
+		}
+		
+		System.out.print("\n");	
+	}
+	
 	public static Graph getGraph() {
 		Graph graph = new Graph(10);
 		graph.addEdge(0, 1);

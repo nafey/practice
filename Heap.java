@@ -1,13 +1,13 @@
-public class Heap {
+public class Heap<T extends Comparable> {
 	private static final int MAX_SIZE = 100;
 	private int tail;
-	private int[] vals; 
+	private Object[] vals; 
+	private boolean isMax;
 	
-	public Heap() {
-		this.vals = new int[MAX_SIZE];
+	public Heap(boolean isMax) {
+		this.vals = new Object[MAX_SIZE];
 		this.tail = 1;
-
-		
+		this.isMax = isMax;
 	}
 	
 	void printHeap() {
@@ -36,15 +36,15 @@ public class Heap {
 		}
 	}
 	
-	private void add(int val) {
+	private void add(T val) {
 		this.vals[tail] = val;
 		this.swim(tail);
 		tail++;
 	}
 	
-	private int max() {
-		if (tail == 1) return 0;
-		int ret = this.vals[1];
+	private T top() {
+		if (tail == 1) return null;
+		T ret = ((T) this.vals[1]);
 		
 		this.vals[1] = this.vals[tail - 1];
 		tail = tail - 1;
@@ -66,15 +66,16 @@ public class Heap {
 			return;
 		}
 		
-		if (this.vals[i] < this.vals[c1] || this.vals[i] < this.vals[c2]){
+		if (!isAbove(((T) this.vals[i]), ((T) this.vals[c1])) || 
+			!isAbove(((T) this.vals[i]), ((T) this.vals[c2]))){
 			int c;
-			if (this.vals[c1] > this.vals[c2]) {
+			if (isAbove(((T) this.vals[c1]), ((T) this.vals[c2]))) {
 				c = c1;
 			} else {
 				c = c2;
 			}
 			
-			int temp = this.vals[i];
+			T temp = ((T) this.vals[i]);
 			vals[i] = this.vals[c];
 			this.vals[c] = temp;
 			
@@ -85,8 +86,8 @@ public class Heap {
 	private void swim(int i) {
 		if (i <= 1) return;
 		
-		if (vals[i] > vals[getParent(i)]) {
-			int temp = vals[i];
+		if (isAbove(((T) vals[i]), ((T) vals[getParent(i)]))) {
+			T temp = ((T) vals[i]);
 			vals[i] = vals[getParent(i)];
 			vals[getParent(i)] = temp;
 		}
@@ -94,34 +95,42 @@ public class Heap {
 		swim(getParent(i));
 	}
 	
+	public boolean isAbove(T a, T b) {
+		boolean ret = (a.compareTo(b) >= 0);
+
+		if (isMax) return ret;
+		else return !ret;
+	}
+	
 	public static void main(String[] args) {
-		Heap h = new Heap();
+		Heap<Integer> h = new Heap(false);
 		
 		h.add(2);
-		h.add(3);
 		h.add(1);
-		h.add(4);
-		h.add(5);
+		
+		h.add(3);
 		h.add(6);
+		h.add(5);
+		h.add(4);
 		
 		h.printHeap();
 		
-		System.out.println("The max is " + h.max());
+		System.out.println("The top is " + h.top());
 		h.printHeap();
 		
-		System.out.println("The max is " + h.max());
+		System.out.println("The top is " + h.top());
 		h.printHeap();
 		
-		System.out.println("The max is " + h.max());
+		System.out.println("The top is " + h.top());
 		h.printHeap();
 		
-		System.out.println("The max is " + h.max());
+		System.out.println("The top is " + h.top());
 		h.printHeap();
 		
-		System.out.println("The max is " + h.max());
+		System.out.println("The top is " + h.top());
 		h.printHeap();
 		
-		System.out.println("The max is " + h.max());
+		System.out.println("The top is " + h.top());
 		h.printHeap();
 		
 		System.out.println("Hello World!");
