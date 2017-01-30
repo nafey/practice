@@ -6,6 +6,18 @@ public class Support {
 		}
 	}
 	
+	public static void printList(int[] u) {
+		printList(u, u.length);
+	}
+	
+	public static void printList(int[] u, int till) {
+		for (int i = 0; i < till; i++) {
+			System.out.print(u[i] + " ");
+		}
+		
+		System.out.print("\n");	
+	}
+	
 	public static Graph getGraph() {
 		Graph graph = new Graph(10);
 		graph.addEdge(0, 1);
