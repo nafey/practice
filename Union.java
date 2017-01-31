@@ -26,20 +26,10 @@ public class Union {
 	
 	public static void main(String[] args) {
 		Union u = new Union(7);
-		
-		Support.printList(u);
-		
+
 		u.union(1, 2);
-		
-		Support.printList(u);
-		
 		u.union(3, 4);
-		
-		Support.printList(u);
-		
 		u.union(2, 3);
-		
-		Support.printList(u);
 		
 		System.out.println(u.connected(1, 4));
 	}

@@ -36,23 +36,7 @@ public class Heap<T extends Comparable> {
 		}
 	}
 	
-	private void add(T val) {
-		this.vals[tail] = val;
-		this.swim(tail);
-		tail++;
-	}
 	
-	private T top() {
-		if (tail == 1) return null;
-		T ret = ((T) this.vals[1]);
-		
-		this.vals[1] = this.vals[tail - 1];
-		tail = tail - 1;
-		
-		this.sink(1);
-		
-		return ret;
-	}
 		
 		
 	
@@ -95,11 +79,35 @@ public class Heap<T extends Comparable> {
 		swim(getParent(i));
 	}
 	
-	public boolean isAbove(T a, T b) {
+	private boolean isAbove(T a, T b) {
 		boolean ret = (a.compareTo(b) >= 0);
 
 		if (isMax) return ret;
 		else return !ret;
+	}
+	
+	public void add(T val) {
+		this.vals[tail] = val;
+		this.swim(tail);
+		tail++;
+	}
+	
+	public T top() {
+		if (tail == 1) return null;
+		T ret = ((T) this.vals[1]);
+		
+		this.vals[1] = this.vals[tail - 1];
+		tail = tail - 1;
+		
+		this.sink(1);
+		
+		return ret;
+	}
+	
+	public boolean hasMore() {
+		if (tail == 1) return false;
+		
+		return true;
 	}
 	
 	public static void main(String[] args) {
