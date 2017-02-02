@@ -1,4 +1,4 @@
-	################## WHAT I SHOULD KNOW . TXT v 0.1.0 ###############
+	################## WHAT I SHOULD KNOW . TXT v 0.1.1 ###############
 	##                                                               ##
 	## The *bare minimum* needed to clear a coding interview.        ##
 	##                                                               ##
@@ -35,35 +35,35 @@
 	x		Stacks
 				- Implementation
 				- Towers of Hanoi
-				- Queue with two stacks
-				- Next Greater element
+				- Implement Queue with two stacks
+				- Next Greater element in a stack
 				
 	x		Queues
 				- Implementation
-				- Stack with queues
+				- Implement Stack with two queues
 			
 	x		Tree
 				- Implementation
 				- Given a sorted (increasing order) array, write an algorithm to create a binary tree with minimal height.
-				- Given a binary search tree, design an algorithm which creates a linked list of all the nodes at each depth 
+				- Given a binary search tree, design an algorithm which creates a linked list of all the nodes at a given height
 				- Design an algorithm and write code to find the first common ancestor of two nodes in a binary tree.
-				- Tree Traversals
+				- Tree Traversals: InOrder, PreOrder PostOrder
 				
 			Binary Search Tree
 				- Implementation
-				- Check if a binary tree is BST or not
-				- Lowest Common Ancestor in a Binary Search Tree.
-				- Inorder Successor in Binary Search Tree
+				- Check if a given binary tree is BST or not
+				- Lowest Common Ancestor of two items in a Binary Search Tree.
+				- Inorder Successor in Binary Search Tree 
 				- Hibbard Deletion
 				
 	x		Heap
 				- Implementation
-				- Delete Max in Heap
-				- Heap Sort
+				- Delete Max Value in Heap
+				- Implement Heap Sort
 				
 	x		HashMap
 				- Implementation
-				- Hashing
+				- Hashing theory
 				- Separate Chaining and Open Addressing
 			
 
