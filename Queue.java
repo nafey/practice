@@ -31,6 +31,8 @@ public class Queue<T> {
 		queue.enqueue(51);
 		queue.enqueue(15);
 		
+		
+		
 		while (!queue.isEmpty()) {
 			System.out.println(queue.dequeue());
 		}

@@ -114,6 +114,32 @@ public class Support {
 		return e;
 	}
 	
+	public static EWD getEWD() {
+		EWD e = new EWD(8);
+		
+		e.addEdge(new Dredge(0, 1, 5.0));
+		e.addEdge(new Dredge(0, 4, 9.0));
+		e.addEdge(new Dredge(0, 7, 8.0));
+		e.addEdge(new Dredge(1, 2, 12.0));
+		              
+		e.addEdge(new Dredge(1, 3, 15.0));
+		e.addEdge(new Dredge(1, 7, 4.0));
+		e.addEdge(new Dredge(2, 3, 3.0));
+		e.addEdge(new Dredge(2, 6, 11.0));
+		              
+		e.addEdge(new Dredge(3, 6, 9.0));
+		e.addEdge(new Dredge(4, 5, 4.0));
+		e.addEdge(new Dredge(4, 6, 20.0));
+		e.addEdge(new Dredge(4, 7, 5.0));
+		              
+		e.addEdge(new Dredge(5, 2, 1.0));
+		e.addEdge(new Dredge(5, 6, 13.0));
+		e.addEdge(new Dredge(7, 5, 6.0));
+		e.addEdge(new Dredge(7, 2, 7.0));
+		
+		return e;
+	}
+	
 	public static void main(String[] args) {
 		System.out.println("Hello Support!");
 	}
