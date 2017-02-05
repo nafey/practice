@@ -1,4 +1,4 @@
-public class Djikstra {
+public class TopShort {
 	private static final int MAX = 9999;
 	
 	private EWD graph;
@@ -7,12 +7,9 @@ public class Djikstra {
 	private double[] dist;
 	private Dredge[] from;
 	
-	public Djikstra(EWD g, int s) {
+	public TopShort(EWD g, int s) {
 		this.graph = g;
 		this.source = s;
-		
-		Queue<Integer> q = new Queue<>();
-		q.enqueue(s);
 		
 		dist = new double[g.V()];
 		
@@ -24,21 +21,25 @@ public class Djikstra {
 		
 		from = new Dredge[g.V()];
 		
-		while (!q.isEmpty()) {
-			Integer top = q.dequeue();
+		Digraph dg = new Digraph(g.V());
+		
+		for (Dredge d : g.edges()) {
+			dg.addEdge(d.from(), d.to());
+		}
+		
+		Topology t = new Topology(dg);
+		
+		for (Integer i : t.getTopologicalSort()) {
+			Integer top = i;
 			double curr = dist[top];
 			
 			for (Dredge d : g.adj(top)) {
 				if (curr + d.weight() < dist[d.to()]) {
 					from[d.to()] = d;
 					dist[d.to()] = curr + d.weight();
-					
-					q.enqueue(d.to());
 				}
 			}
-			
 		}
-			
 	}
 	
 	public double distTo(int v) {
@@ -60,9 +61,9 @@ public class Djikstra {
 	}
 	
 	public static void main(String[] args) {
-		Djikstra dj = new Djikstra(Support.getEWD(), 0);
-		Support.printList(dj.pathTo(6));
+		TopShort t = new TopShort(Support.getEWD(), 0);
+		Support.printList(t.pathTo(6));
 		
-		System.out.println(dj.distTo(6));
+		System.out.println("Hello World!");
 	}
 }

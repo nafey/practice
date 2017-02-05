@@ -6,6 +6,14 @@ public class Support {
 		}
 	}
 	
+	public static void printList(Iterable<Integer> u) {
+		for (Integer i : u) {
+			System.out.print(i + " ");
+		}
+		
+		System.out.print("\n");
+	}
+	
 	public static void printList(int[] u) {
 		printList(u, u.length);
 	}
