@@ -1,4 +1,4 @@
-public class Djikstra {
+public class BellFord {
 	private static final int MAX = 9999;
 	
 	private EWD graph;
@@ -7,7 +7,7 @@ public class Djikstra {
 	private double[] dist;
 	private Dredge[] from;
 	
-	public Djikstra(EWD g, int s) {
+	public BellFord(EWD g, int s) {
 		this.graph = g;
 		this.source = s;
 		
@@ -21,25 +21,34 @@ public class Djikstra {
 		
 		from = new Dredge[g.V()];
 		
-		
 		Queue<Integer> q = new Queue<>();
 		q.enqueue(s);
 		
 		while (!q.isEmpty()) {
-			Integer top = q.dequeue();
-			double curr = dist[top];
+			boolean[] repeatFlag = new boolean[graph.V()];
 			
-			for (Dredge d : g.adj(top)) {
-				if (curr + d.weight() < dist[d.to()]) {
-					from[d.to()] = d;
-					dist[d.to()] = curr + d.weight();
-					
-					q.enqueue(d.to());
-				}
+			Queue<Integer> worker = new Queue<>();
+			while (!q.isEmpty()) {
+				worker.enqueue(q.dequeue());
 			}
 			
+			while (!worker.isEmpty()) {
+				Integer top = worker.dequeue();
+				double curr = dist[top];
+				
+				for (Dredge d : graph.adj(top)) {
+					if (curr + d.weight() < dist[d.to()]) {
+						from[d.to()] = d;
+						dist[d.to()] = curr + d.weight();
+						
+						if (!repeatFlag[d.to()]) {
+							q.enqueue(d.to());
+							repeatFlag[d.to()] = true;
+						}
+					}
+				}
+			}
 		}
-			
 	}
 	
 	public double distTo(int v) {
@@ -61,9 +70,10 @@ public class Djikstra {
 	}
 	
 	public static void main(String[] args) {
-		Djikstra dj = new Djikstra(Support.getEWD(), 0);
+		BellFord dj = new BellFord(Support.getEWD(), 0);
 		Support.printList(dj.pathTo(6));
 		
-		System.out.println(dj.distTo(6));
+		
+		System.out.println("Hello World!");
 	}
 }
