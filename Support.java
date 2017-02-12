@@ -6,6 +6,16 @@ public class Support {
 		}
 	}
 	
+	public static void printList(String[] u) {
+		for (int i = 0; i < u.length; i++) {
+			System.out.println(u[i]);
+		}
+	}
+	
+	public static void s(Object s) {
+		System.out.println(String.valueOf(s));
+	}
+	
 	public static void printList(Iterable<Integer> u) {
 		for (Integer i : u) {
 			System.out.print(i + " ");
