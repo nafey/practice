@@ -6,17 +6,17 @@ public class Support {
 		}
 	}
 	
-	public static void printList(String[] u) {
+	public static void s(Object s) {
+		System.out.println(String.valueOf(s));
+	}
+	
+	public static void pL(String[] u) {
 		for (int i = 0; i < u.length; i++) {
 			System.out.println(u[i]);
 		}
 	}
 	
-	public static void s(Object s) {
-		System.out.println(String.valueOf(s));
-	}
-	
-	public static void printList(Iterable<Integer> u) {
+	public static void pL(Iterable<Integer> u) {
 		for (Integer i : u) {
 			System.out.print(i + " ");
 		}
@@ -24,11 +24,11 @@ public class Support {
 		System.out.print("\n");
 	}
 	
-	public static void printList(int[] u) {
-		printList(u, u.length);
+	public static void pL(int[] u) {
+		pL(u, u.length);
 	}
 	
-	public static void printList(int[] u, int till) {
+	public static void pL(int[] u, int till) {
 		for (int i = 0; i < till; i++) {
 			System.out.print(u[i] + " ");
 		}
@@ -36,7 +36,7 @@ public class Support {
 		System.out.print("\n");	
 	}
 	
-	public static void printList(Object[] u, int till) {
+	public static void pL(Object[] u, int till) {
 		for (int i = 0; i < till; i++) {
 			System.out.print(u[i] + " ");
 		}

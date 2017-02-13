@@ -9,7 +9,7 @@ public class KeyIndex {
 		int c = vals.size();
 		String[] ret = new String[c];
 
-		int[] count = new int[radix + 1];
+		int[] count = new int[256];
 
 		
 		Iterator it = vals.entrySet().iterator();
@@ -32,8 +32,7 @@ public class KeyIndex {
 			count[((int) vals.get(key)) - 1]++;
 		}
 		
-		Support.printList(ret);
-		return null;
+		return ret;
 	}
 	
 	public static void main(String[] args) {
