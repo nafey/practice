@@ -20,31 +20,34 @@ public class MSDRadix {
 			String val = vals[i];
 			int dig = this.dig(val, pos);
 			
-			count[dig]++;
+			count[dig + 1]++;
 		}
 		
 		count[0] = lo;
 		
+		// aggregate cumulates
 		for (int i = 1; i < count.length; i++) {
 			count[i] = count[i - 1] + count[i];
 		}
 		
+		// copy which before count is changed
 		for (int i = 0; i < copy.length; i++) {
 			copy[i] = count[i];
 		}
 		
+		// sorting to aux
 		for (int i = lo; i < high; i++) {
 			int dig = this.dig(vals[i], pos);
-			aux[count[dig - 1]] = vals[i];
-			count[dig - 1]++;
+			aux[count[dig]] = vals[i];
+			count[dig]++;
 		}
 		
-		
-		
+		// copying back to vals
 		for (int i = lo; i < high; i++) {
 			vals[i] = aux[i];
 		}		
 		
+		// call sub sorts
 		for (int i = 1; i < copy.length; i++) {
 			lo = copy[i - 1];
 			high = copy[i];
@@ -57,7 +60,7 @@ public class MSDRadix {
 	
 	public static void main(String[] args) {
 		String[] vals = {
-			"412",
+			"402",
 			"144",
 			"312",
 			"614",
@@ -67,14 +70,14 @@ public class MSDRadix {
 			"255",
 			"652",
 			"254",
-			"522",
+			"520",
 			"135"
 		};
 				
 		String[] aux = new String[vals.length];		
 		
 		MSDRadix msd = new MSDRadix();
-		msd.sort(vals, aux, 0, vals.length, 6, 0);
+		msd.sort(vals, aux, 0, vals.length, 7, 0);
 		
 		Support.pL(vals);
 		Support.s("-----");
