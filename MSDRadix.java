@@ -7,20 +7,21 @@ import java.util.HashSet;
 public class MSDRadix {
 	
 	private int dig(String val, int pos) {
+		if (pos >= val.length()) return 0;
 		return Character.getNumericValue(val.charAt(pos));
 	}
 	
 	// Limited implementation. No duplicate vals. Only digits less than 6.
 	public void sort(String[] vals, String[] aux, int lo, int high, int radix, int pos) {
-		int[] count = new int[radix + 1];
-		int[] copy = new int[radix + 1];
+		int[] count = new int[radix + 2];
+		int[] copy = new int[radix + 2];
 		
 		// build cumulates
 		for (int i = lo; i < high; i++) {
 			String val = vals[i];
 			int dig = this.dig(val, pos);
 			
-			count[dig + 1]++;
+			count[dig + 2]++;
 		}
 		
 		count[0] = lo;
@@ -38,8 +39,8 @@ public class MSDRadix {
 		// sorting to aux
 		for (int i = lo; i < high; i++) {
 			int dig = this.dig(vals[i], pos);
-			aux[count[dig]] = vals[i];
-			count[dig]++;
+			aux[count[dig + 1]] = vals[i];
+			count[dig + 1]++;
 		}
 		
 		// copying back to vals
@@ -62,7 +63,7 @@ public class MSDRadix {
 		String[] vals = {
 			"402",
 			"144",
-			"312",
+			"31",
 			"614",
 			"655",
 			"214",
@@ -70,8 +71,8 @@ public class MSDRadix {
 			"255",
 			"652",
 			"254",
-			"520",
-			"135"
+			"5205",
+			"13"
 		};
 				
 		String[] aux = new String[vals.length];		
