@@ -12,7 +12,7 @@ public class MSDRadix {
 	}
 	
 	// Limited implementation. No duplicate vals. Only digits less than 6.
-	public void sort(String[] vals, String[] aux, int lo, int high, int radix, int pos) {
+	private void sort(String[] vals, String[] aux, int lo, int high, int radix, int pos) {
 		int[] count = new int[radix + 2];
 		
 		// build cumulates
@@ -53,7 +53,12 @@ public class MSDRadix {
 			
 			lo = count[i];
 		}
-			
+	}
+	
+	public void sort(String[] vals) {
+		String[] aux = new String[vals.length];
+		
+		this.sort(vals, aux, 0, vals.length, 10, 0);
 	}
 	
 	public static void main(String[] args) {
@@ -64,30 +69,24 @@ public class MSDRadix {
 			"6331",
 			"3314",
 			"5231",
-			"0123",
-			"144",
-			"31",
+			"01273",
+			"1449",
+			"371",
 			"614",
 			"655",
 			"214",
 			"414",
-			"255",
-			"652",
-			"254",
+			"2505",
+			"8652",
+			"7254",
 			"5205",
 			"13",
-			"02"
+			"702"
 		};
 				
-		String[] aux = new String[vals.length];		
-		
 		MSDRadix msd = new MSDRadix();
-		msd.sort(vals, aux, 0, vals.length, 7, 0);
+		msd.sort(vals);
 		
 		Support.pL(vals);
-		Support.s("-----");
-		
-			
-		System.out.println("Hello World!");
 	}
 }
