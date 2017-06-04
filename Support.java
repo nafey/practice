@@ -10,6 +10,12 @@ public class Support {
 		System.out.println(String.valueOf(s));
 	}
 	
+	public static void pL(Object[] u) {
+		for (int i = 0; i < u.length; i++) {
+			System.out.println(u[i]);
+		}
+	}
+	
 	public static void pL(String[] u) {
 		for (int i = 0; i < u.length; i++) {
 			System.out.println(u[i]);
@@ -27,6 +33,23 @@ public class Support {
 	public static void pL(int[] u) {
 		pL(u, u.length);
 	}
+	
+	public static int radix() {
+		return 36;
+	}
+	
+	public static int charVal(char c) {
+		if (Character.isDigit(c)) {
+			return Character.getNumericValue(c);
+		} else {
+			if (c < 97 || c > 122) {
+				return -1;
+			} else {
+				return c - 87;
+			}
+		}
+	}
+
 	
 	public static void pL(int[] u, int till) {
 		for (int i = 0; i < till; i++) {
